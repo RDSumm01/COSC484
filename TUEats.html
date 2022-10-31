@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="tuEatsJS.js"></script>
+    <link rel="stylesheet" href="TUEats.css">
+    <title>TU Eats</title>
+    <meta charset="UTF-8">    
+</head>
+<body>
+    <h1><img src="TULogo.png" width="150" height="125">Welcome to TU Eats!</h1>
+
+    <form id="signUpForm" onsubmit="return validForm();" action="tuEatsCompleted.html" method="get">
+        <fieldset>
+            <legend>Sign up for your account here</legend>
+            <label for="uName">Username*:</label><br>
+            <input type="text" id="uName" name="uName" required><br>
+            <label for="email">Email*:</label><br>
+            <input type="text" id="email" name="email" required><br>
+            <label for="pWord">Password*:</label><br> 
+            <input type="password" id="pWord" name="pWord" pattern="(?=.*[A-Z])(?=.*[a-z]).{6,24}"
+                title="Must contain at least one uppercase, one lowercase, and between 6 and 24 total characters" required><br>
+            <label for="veriPass">Verify password*:</label><br>
+            <input type="password" id="veriPass" name="veriPass" required><br>
+            <label for="refCode">Referral Code (optional):</label><br>
+            <input type="text" id="refCode" name="refCode" title="empty"><br>
+            <input type="checkbox" id="newsCheck" name="newsCheck"> 
+            <label for="newsCheck">Sign up for our Newsletter?</label><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+
+    <fieldset>
+        <label for="menu">This menu is subject to change. Visit <a href="https://www.towson.edu/">our website</a> for more information.</label>
+        <table colspan = "4" rowspan = "4">
+        <tr><th></th><th>Meal Item</th><th>Price(USD)</th><th>Calorie Count</th></tr>
+        <tr><td>Item 1</td><td>Burger</td><td>$8.00</td><td>550cal</td></tr>
+        <tr><td>Item 2</td><td>Mozzarella Sticks</td><td>$7.00</td><td rowspan="2">400cal</td></tr>
+        <tr><td>Item 3</td><td>Fries</td><td>$4.00</td></tr>
+        </table>
+    </fieldset>
+</body>
+</html>

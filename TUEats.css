@@ -1,0 +1,24 @@
+  a:hover{
+    color: #ffbb00;
+  }
+  body {
+    background-color: white;
+  }
+  
+  h1 {
+    color: #ffbb00;
+    margin-left: 20px;
+  }
+  th{
+    font-weight: bold;
+  }
+  td{
+    text-align: center;
+  }
+  table{
+    width: 75%;
+  }
+  table, th, td{
+    background-color: gray;
+    border: 1px solid;
+  }
