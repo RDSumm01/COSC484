@@ -10,11 +10,10 @@ app.get('/', function(req, res){
     res.send("root")
 });
 
-app.get('/v1/zillow/houses', function(req, res){
+app.get('/v1/zillow/houses?', function(req, res){
     var resArr = [];
     if(req.query.city != null){ //compare city parameter to given city names in cityArr, populate resArr with qualifying prices
         for(let i=0; i <= cityArr.length-1; i++){
-            console.log(cityArr[i].city)
             if(req.query.city.toLowerCase() == cityArr[i].city){ //push any valid JSON objects into resArr if city names match
                 resArr.push(cityArr[i])
             }
@@ -34,7 +33,12 @@ app.get('/v1/zillow/prices', function(req, res){
             resArr.push(cityArr[i])
         }
     };
-    res.send(resArr)
+    if(resArr.length != 0){
+        res.send(resArr).writeHead(200)
+    }
+    else{
+        res.send(resArr).writeHead(404)
+    }
 });
 
 app.get('/v1/zillow/zestimate', function(req, res){
